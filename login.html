@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Controle de Estoque</title>
+    <style>
+        body {
+            background: linear-gradient(270deg, #990000, #cc0000, #990000);
+            background-size: 600% 600%;
+            animation: AnimationName 30s ease infinite;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        @keyframes AnimationName {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #cc0000;
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #cc0000;
+            background-color: transparent;
+            font-size: 16px;
+            color: #333;
+            transition: border-bottom-color 0.3s;
+        }
+
+        .login-container input[type="text"]:focus,
+        .login-container input[type="email"]:focus,
+        .login-container input[type="password"]:focus {
+            border-bottom-color: #990000;
+            outline: none;
+        }
+
+        .login-container button {
+            background-color: #cc0000;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #990000;
+        }
+
+        ul.flashes {
+    list-style-type: none;
+    padding: 10px;
+}
+
+ul.flashes li.error {
+    color: red;
+}
+
+ul.flashes li.success {
+    color: green;
+}
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login - Controle de Estoque</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+        <form action="/log" method="POST">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="senha" placeholder="Senha">
+            <a href="/registrar"><p style="color:#cc0000">É novo por aqui?Registre-se agora!</p></a>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>

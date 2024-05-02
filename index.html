@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(270deg, #990000, #cc0000, #990000);
+            background-size: 600% 600%;
+            animation: AnimationName 30s ease infinite;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        @keyframes AnimationName {
+            0% {background-position: 0% 50%}
+            50% {background-position: 100% 50%}
+            100% {background-position: 0% 50%}
+        }
+
+        #menu {
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #menu a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #menu a:hover {
+            background-color: #cc0000;
+        }
+
+        h1 {
+            color: white;
+            margin: 80px auto 20px auto;
+            text-align: center;
+            font-size: 3em;
+        }
+
+        .menu {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 120px auto 0 auto;
+            overflow: hidden;
+        }
+
+        .menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+
+        .menu a:hover, .menu a:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background-color: #cc0000;
+            color: white;
+        }
+        .nome-do-usuario {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 16px;
+        } 
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </div>
+    <h1>Menu de Controle de Estoque</h1>
+    <div class="menu">
+        <a href="/consultar">Consultar estoque</a>
+        <a href="/adicionar">Adicionar ao estoque</a>
+        <a href="/quantidade">Remover Produto</a>
+        <a href="/entradas">Registro de Entradas</a>
+    </div>
+</body>
+</html>
